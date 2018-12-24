@@ -4,6 +4,7 @@ const util = require('util');
 const moment = require('moment');
 
 const CWLogger = require('../lib/cw-logger');
+const Logger = require('../lib/logger');
 
 describe('test/cw-logger.test.js', () => {
   it('CWLogger', () => {
@@ -33,5 +34,8 @@ describe('test/cw-logger.test.js', () => {
   it('create log file has module name', () => {
     const logger = new CWLogger({ module: 'app' });
     logger.info('logger2');
+
+    expect(logger.set('module1').info('module1 log 1') instanceof Logger).toBeTruthy();
+    expect(logger.set('module1').info('module1 log 2') instanceof Logger).toBeTruthy();
   });
 });
