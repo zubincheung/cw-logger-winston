@@ -31,7 +31,7 @@ npm install cw-logger-winston --save
 ## Using
 
 ```js
-const CWLogger=require('cw-logger-winston').CWLogger;
+const CWLogger = require('cw-logger-winston').CWLogger;
 
 const logger = new CWLogger({
   name: 'app';
@@ -45,7 +45,7 @@ logger.error(new Error('error 1'))
 or
 
 ```js
-const CWLogger=require('cw-logger-winston').CWLogger;
+const CWLogger = require('cw-logger-winston').CWLogger;
 const logger = new CWLogger({
   name: 'app';
   filePath:'./logs';
