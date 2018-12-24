@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "Zubin",
   "license": "MIT",
+  "keywords": [
+    "logger",
+    "winston"
+  ],
   "scripts": {
     "pub": "npm publish . --registry=https://registry.npmjs.org/",
     "lint": "eslint ./lib/**/*.js",
