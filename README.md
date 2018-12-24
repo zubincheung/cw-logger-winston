@@ -59,4 +59,4 @@ logger.get('module2').info('foo')
 
 ## License
 
-[MIT](./LICENSE.txt).
+[MIT](./LICENSE).
