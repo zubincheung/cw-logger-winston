@@ -6,6 +6,7 @@
   "author": "Zubin",
   "license": "MIT",
   "scripts": {
+    "pub": "npm publish . --registry=https://registry.npmjs.org/",
     "lint": "eslint ./lib/**/*.js",
     "test": "jest",
     "ci": "npm run lint && npm run test -- --coverage",
