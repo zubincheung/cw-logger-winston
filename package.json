@@ -1,0 +1,39 @@
+{
+  "name": "cw-logger-winston",
+  "version": "1.0.0",
+  "description": "ciwong logger base on winston",
+  "main": "index.js",
+  "author": "Zubin",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./lib/**/*.js",
+    "test": "jest",
+    "ci": "npm run lint && npm run test -- --coverage",
+    "codecov": "codecov"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zubincheung/cw-logger-winston.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "codecov": "^3.1.0",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
+    "moment": "^2.23.0",
+    "pre-commit": "^1.2.2"
+  },
+  "dependencies": {
+    "winston": "^3.1.0",
+    "winston-daily-rotate-file": "^3.5.1"
+  }
+}
