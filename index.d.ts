@@ -1,14 +1,14 @@
 interface ILoggerLevel {
-  all: string;
-  debug: string;
-  info: string;
-  warn: string;
-  error: string;
-  none: string;
+  ALL: string;
+  DEBUG: string;
+  INFO: string;
+  WARN: string;
+  ERROR: string;
+  NONE: string;
 }
 
 export const levels: ILoggerLevel;
-export type LoggerLevel = keyof ILoggerLevel;
+export type LoggerLevel = ILoggerLevel | 'silly' | 'debug' | 'info' | 'warn' | 'error' | 'none';
 
 export interface MetaInfo {
   level: string;
@@ -27,8 +27,9 @@ interface LoggerOptions {
   name?: string;
   filePath?: string;
   formatter?: FormatterFunction;
+  consoleFormatter?: FormatterFunction;
   consoleLevel?: LoggerLevel;
-  // outputJSON?: boolean;
+  json?: boolean;
 }
 
 interface Logger {
@@ -59,7 +60,8 @@ export class CWLogger implements Logger {
    * @param {LoggerOptions} options logger options assign with `defaultOptions` propery
    * - {String} name - log name,default `app`
    * - {String} filePath - log file path default `./logs`
-   * - {FormatterFunction} formatter - log formatter
+   * - {FormatterFunction} formatter - log file formatter
+   * - {FormatterFunction} consoleFormatter - console formatter default formatter
    * - {String} consoleLevel - log console level,default `info`
    * @memberof CWLogger
    */

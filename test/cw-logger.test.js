@@ -31,6 +31,17 @@ describe('test/cw-logger.test.js', () => {
     ).toBeTruthy();
   });
 
+  it('create json file', () => {
+    const logger = new CWLogger({ json: true });
+    logger.info('logger1');
+    expect(
+      fs.existsSync(path.join(__dirname, `../logs/app-info-${moment().format('YYYY-MM-DD')}.log`)),
+    ).toBeTruthy();
+    expect(
+      fs.existsSync(path.join(__dirname, `../logs/error-${moment().format('YYYY-MM-DD')}.log`)),
+    ).toBeTruthy();
+  });
+
   it('create log file has module name', () => {
     const logger = new CWLogger({ module: 'app' });
     logger.info('logger2');
