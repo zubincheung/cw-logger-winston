@@ -24,10 +24,14 @@ describe('test/cw-logger.test.js', () => {
     const logger = new CWLogger();
     logger.info('logger1');
     expect(
-      fs.existsSync(path.join(__dirname, `../logs/app-info-${moment().format('YYYY-MM-DD')}.log`)),
+      fs.existsSync(
+        path.join(__dirname, `../logs/info/app-info-${moment().format('YYYY-MM-DD')}.log`),
+      ),
     ).toBeTruthy();
     expect(
-      fs.existsSync(path.join(__dirname, `../logs/error-${moment().format('YYYY-MM-DD')}.log`)),
+      fs.existsSync(
+        path.join(__dirname, `../logs/error/error-${moment().format('YYYY-MM-DD')}.log`),
+      ),
     ).toBeTruthy();
   });
 
@@ -35,10 +39,14 @@ describe('test/cw-logger.test.js', () => {
     const logger = new CWLogger({ json: true });
     logger.info('logger1');
     expect(
-      fs.existsSync(path.join(__dirname, `../logs/app-info-${moment().format('YYYY-MM-DD')}.log`)),
+      fs.existsSync(
+        path.join(__dirname, `../logs/info/app-info-${moment().format('YYYY-MM-DD')}.log`),
+      ),
     ).toBeTruthy();
     expect(
-      fs.existsSync(path.join(__dirname, `../logs/error-${moment().format('YYYY-MM-DD')}.log`)),
+      fs.existsSync(
+        path.join(__dirname, `../logs/error/error-${moment().format('YYYY-MM-DD')}.log`),
+      ),
     ).toBeTruthy();
   });
 
